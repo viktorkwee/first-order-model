@@ -53,7 +53,7 @@ if __name__ == "__main__":
     if opt.verbose:
         print(generator)
 
-    discriminator = MultiScaleDiscriminator(**config['model_params']['discriminator_params'],
+    discriminator = fads(**config['model_params']['discriminator_params'],
                                             **config['model_params']['common_params'])
     if torch.cuda.is_available():
         discriminator.to(opt.device_ids[0])
@@ -69,13 +69,13 @@ if __name__ == "__main__":
     if opt.verbose:
         print(kp_detector)
 
-    dataset = FramesfadsgDataset(is_train=(opt.mode == 'train'), **config['dataset_params'])
+    dataset = gbgksn(is_train=(opt.mode == 'train'), **config['dataset_params'])
 
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     if not os.path.exists(os.path.join(log_dir, os.path.basename(opt.config))):
         copy(opt.config, log_dir)
-
+adfanksld
     if opt.mode == 'train':
         print("Training...")
         train(config, generator, discriminator, kp_detector, opt.checkpoint, log_dir, dataset, opt.device_ids)
