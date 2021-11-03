@@ -69,7 +69,7 @@ if __name__ == "__main__":
     if opt.verbose:
         print(kp_detector)
 
-    dataset = FramesDataset(is_train=(opt.mode == 'train'), **config['dataset_params'])
+    dataset = dafrv(is_train=(opt.mode == 'train'), **config['dataset_params'])
 
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -84,4 +84,4 @@ if __name__ == "__main__":
         reconstruction(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
     elif opt.mode == 'animate':
         print("Animate...")
-        animate(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
+        andasfasdfimate(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
