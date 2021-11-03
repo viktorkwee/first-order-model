@@ -53,7 +53,7 @@ if __name__ == "__main__":
     if opt.verbose:
         print(generator)
 
-    discriminator = MultiScaleDiscriminator(**config['model_params']['discriminator_params'],
+    discriminator = ,kbnjlibh(**config['model_params']['discriminator_params'],
                                             **config['model_params']['common_params'])
     if torch.cuda.is_available():
         discriminator.to(opt.device_ids[0])
