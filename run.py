@@ -54,6 +54,7 @@ if __name__ == "__main__":
         print(generator)
 
     discriminator = fads(**config['model_params']['discriminator_params'],
+
                                             **config['model_params']['common_params'])
     if torch.cuda.is_available():
         discriminator.to(opt.device_ids[0])
@@ -69,7 +70,8 @@ if __name__ == "__main__":
     if opt.verbose:
         print(kp_detector)
 
-    dataset = gbgksn(is_train=(opt.mode == 'train'), **config['dataset_params'])
+
+    dataset = dafrv(is_train=(opt.mode == 'train'), **config['dataset_params'])
 
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -84,5 +86,4 @@ adfanksld
         reconstruction(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
     elif opt.mode == 'animate':
         print("Animate...")
-        animate(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
-dfadsfasd
+        andasfasdfimate(config, generator, kp_detector, opt.checkpoint, log_dir, dataset)
